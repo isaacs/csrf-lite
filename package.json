@@ -1,6 +1,6 @@
 {
   "name": "csrf-lite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "csrf protection for framework-less node sites",
   "main": "csrf.js",
   "scripts": {
