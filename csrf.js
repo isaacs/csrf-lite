@@ -22,7 +22,7 @@ csrf.html = function (token) {
   return '<input type=hidden name=x-csrf-token value="' + token + '">'
 }
 
-csrf.validate = function (data, token) {
+csrf.valid = csrf.validate = function (data, token) {
   if (!token || typeof token !== 'string')
     return false
 
