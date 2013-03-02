@@ -125,3 +125,11 @@ test('post form (bad csrf cookie)', function(t) {
     t.end();
   }).jar(jar2);
 });
+
+test('pull token off of data when validating', function(t) {
+  var data = { 'x-csrf-token': '1234', ok: 'maybe' }
+  var valid = csrf.validate(data, '1234')
+  t.ok(valid)
+  t.same(data, { ok: 'maybe' })
+  t.end()
+})

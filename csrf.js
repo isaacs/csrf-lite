@@ -26,5 +26,8 @@ csrf.valid = csrf.validate = function (data, token) {
   if (!token || typeof token !== 'string')
     return false
 
-  return data['x-csrf-token'] === token
+  // remove the token, so that you don't accidentally save it somewhere.
+  var valid = data['x-csrf-token'] === token
+  delete data['x-csrf-token']
+  return valid
 }
