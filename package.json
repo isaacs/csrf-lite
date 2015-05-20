@@ -15,7 +15,7 @@
     "forgery"
   ],
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
-  "license": "BSD",
+  "license": "ISC",
   "devDependencies": {
     "cookies": "~0.3.6",
     "request": "~2.12.0",
