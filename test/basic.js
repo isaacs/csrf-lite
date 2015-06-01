@@ -27,10 +27,6 @@ var server = http.createServer(function (req, res) {
   }
 })
 
-tap.tearDown(function(t) {
-  server.close();
-});
-
 function showForm(req, res, token) {
   res.end('<html><form method=post>' +
           '<label>Name <input name=name></label>' +
@@ -133,3 +129,8 @@ test('pull token off of data when validating', function(t) {
   t.same(data, { ok: 'maybe' })
   t.end()
 })
+
+tap.test('teardown', function(t) {
+  server.close();
+  t.end()
+});
