@@ -1,6 +1,7 @@
 module.exports = csrf
 
 var crypto = require('crypto')
+var scmp = require('scmp')
 
 // call this with your token, or it'll make a new one.
 function csrf(token) {
@@ -27,7 +28,7 @@ csrf.valid = csrf.validate = function (data, token) {
     return false
 
   // remove the token, so that you don't accidentally save it somewhere.
-  var valid = data['x-csrf-token'] === token
+  var valid = scmp(data['x-csrf-token'], token)
   delete data['x-csrf-token']
   return valid
 }
